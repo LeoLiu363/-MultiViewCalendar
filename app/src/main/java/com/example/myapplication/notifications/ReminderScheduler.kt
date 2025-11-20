@@ -4,6 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import com.example.myapplication.data.CalendarEvent
 
 object ReminderScheduler {
@@ -14,6 +15,9 @@ object ReminderScheduler {
         if (triggerAt <= System.currentTimeMillis()) return
 
         val alarmManager = context.getSystemService(AlarmManager::class.java)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarmManager.canScheduleExactAlarms()) {
+            return
+        }
         val pendingIntent = reminderPendingIntent(context, event)
 
         val alarmType = AlarmManager.RTC_WAKEUP
