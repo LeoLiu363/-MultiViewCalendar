@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reminder_entries">
+        <item>@string/label_reminder_none</item>
+        <item>@string/label_reminder_5</item>
+        <item>@string/label_reminder_15</item>
+        <item>@string/label_reminder_30</item>
+        <item>@string/label_reminder_60</item>
+        <item>@string/label_reminder_day</item>
+    </string-array>
+    <integer-array name="reminder_values">
+        <item>-1</item>
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>1440</item>
+    </integer-array>
+</resources>
+
+
