@@ -17,6 +17,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentMonthViewBinding
 import com.example.myapplication.ui.adapter.EventListAdapter
 import com.example.myapplication.ui.viewmodel.CalendarViewModel
+import com.example.myapplication.util.LunarUtils
 import java.time.LocalDate
 import java.time.ZoneId
 import kotlinx.coroutines.launch
@@ -72,6 +73,12 @@ class MonthViewFragment : Fragment() {
                                 date.year,
                                 date.monthValue
                             )
+                        // 显示农历
+                        val lunarText = LunarUtils.getLunarText(date)
+                        binding.monthLunarText.text = lunarText
+                        binding.monthLunarText.visibility = 
+                            if (lunarText.isNotEmpty()) View.VISIBLE else View.GONE
+                        
                         val millis = date.atStartOfDay(zoneId).toInstant().toEpochMilli()
                         if (binding.monthCalendar.date != millis) {
                             binding.monthCalendar.date = millis

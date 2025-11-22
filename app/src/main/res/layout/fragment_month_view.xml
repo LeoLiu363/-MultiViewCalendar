@@ -6,12 +6,27 @@
     android:orientation="vertical"
     android:padding="12dp">
 
-    <TextView
-        android:id="@+id/monthTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-        tools:text="2025年11月" />
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/monthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            tools:text="2025年11月" />
+        
+        <TextView
+            android:id="@+id/monthLunarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="农历十月十五" />
+    </LinearLayout>
 
     <CalendarView
         android:id="@+id/monthCalendar"

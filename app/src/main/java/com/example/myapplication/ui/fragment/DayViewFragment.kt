@@ -16,6 +16,7 @@ import com.example.myapplication.EventEditorActivity
 import com.example.myapplication.databinding.FragmentDayViewBinding
 import com.example.myapplication.ui.adapter.EventListAdapter
 import com.example.myapplication.ui.viewmodel.CalendarViewModel
+import com.example.myapplication.util.LunarUtils
 import com.example.myapplication.util.TimeUtils
 import kotlinx.coroutines.launch
 
@@ -61,6 +62,11 @@ class DayViewFragment : Fragment() {
                 launch {
                     viewModel.selectedDate.collect { date ->
                         binding.dayTitle.text = TimeUtils.dateLabel(date)
+                        // 显示农历
+                        val lunarText = LunarUtils.getLunarText(date)
+                        binding.dayLunarText.text = lunarText
+                        binding.dayLunarText.visibility = 
+                            if (lunarText.isNotEmpty()) View.VISIBLE else View.GONE
                     }
                 }
                 launch {

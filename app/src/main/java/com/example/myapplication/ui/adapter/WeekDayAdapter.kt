@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemWeekDayBinding
 import com.example.myapplication.databinding.ItemWeekEventBinding
 import com.example.myapplication.ui.viewmodel.CalendarViewModel
+import com.example.myapplication.util.LunarUtils
 import com.example.myapplication.util.TimeUtils
 import java.time.format.TextStyle
 import java.util.Locale
@@ -45,6 +46,10 @@ class WeekDayAdapter(
                 TextStyle.SHORT,
                 Locale.getDefault()
             )
+            // 显示农历
+            val lunarText = LunarUtils.getLunarMonthDay(item.date)
+            binding.weekDayLunar.text = lunarText
+            binding.weekDayLunar.isVisible = lunarText.isNotEmpty()
 
             binding.weekDayEvents.removeAllViews()
             binding.weekDayEmpty.isVisible = item.events.isEmpty()

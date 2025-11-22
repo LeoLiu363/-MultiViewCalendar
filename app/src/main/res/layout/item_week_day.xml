@@ -17,12 +17,27 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
-        <TextView
-            android:id="@+id/weekDaySubtitle"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="?attr/colorOutline" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            
+            <TextView
+                android:id="@+id/weekDaySubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOutline" />
+            
+            <TextView
+                android:id="@+id/weekDayLunar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOutline" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/weekDayEvents"

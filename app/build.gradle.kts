@@ -56,6 +56,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation(libs.kotlinx.coroutines.android)
+    // 农历库依赖 - 使用 Maven Central 版本（不需要 JitPack）
+    implementation("cn.6tail:lunar:1.7.7")
     kapt(libs.androidx.room.compiler)
     coreLibraryDesugaring(libs.desugar.jdk)
     testImplementation(libs.junit)
